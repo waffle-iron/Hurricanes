@@ -257,7 +257,7 @@ scrape_key <- function(header) {
 scrape_name <- function(header) {
   # Status helps to find name, so get status.
   status <- scrape_status(header)
-  ptn <- paste0(status, "[:blank:]([:alpha:]+)[:blank:]")
+  ptn <- paste0(status, "[:blank:]([[:alpha:]-]+)[:blank:]")
   name <- trimws(stringr::str_match(header, ptn)[,2])
   return(name)
 }
@@ -270,9 +270,9 @@ scrape_name <- function(header) {
 scrape_status <- function(header) {
   options <- c("POST-TROPICAL CYCLONE", 
                "REMNANTS OF", 
-               "TROPICAL DISTURBANCE", 
-               "TROPICAL DEPRESSION", 
-               "TROPICAL STORM", 
+               "(?:SUB)TROPICAL DISTURBANCE", 
+               "(?:SUB)TROPICAL DEPRESSION", 
+               "(?:SUB)TROPICAL STORM", 
                "HURRICANE")
   if(!any(stringr::str_count(header, paste(options, sep = "|"))))
     stop("Options not in header.")
