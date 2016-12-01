@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
   - NA
 
 ### Changed
-  - NA
+  - Fix bug in `scrape_status()` that was missing names and getting wrong status due to new values.
 
 ### Removed
   - NA

@@ -4,7 +4,7 @@ Correct bugs and erroneous data.
 
 ## Bug Fixes
 
-
+  * `Status` and `Name` were improperly being read due to new types of values in the text product headers. In this case, "POST-TROPICAL CYCLONE" and "REMNANTS OF" which previously were not recognized. These values have been added to list of options as acceptable. Additionally, "REMANTS OF" should be cleaned and produce only "REMNANTS" as `Status` now in returned dataframe. (#14)
 
 # Hurricanes 0.0.0.9002
 
