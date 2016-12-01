@@ -9,7 +9,7 @@ Correct bugs and erroneous data.
 ## Bug Fixes
 
   * `fstadv$Adv` would return NA if additional text after advisory number in header (for example, "...CORRECTED"). Pattern modified to allow optional alphanumeric and punctuation between advisory number and newline character(\n). (#13)
-  * `Status` and `Name` were improperly being read due to new types of values in the text product headers. In this case, "POST-TROPICAL CYCLONE" and "REMNANTS OF" which previously were not recognized. These values have been added to list of options as acceptable. Additionally, "REMANTS OF" should be cleaned and produce only "REMNANTS" as `Status` now in returned dataframe. (#14)
+  * `Status` and `Name` were improperly being read due to new types of values in the text product headers. In this case, "POST-TROPICAL CYCLONE" and "REMNANTS OF" which previously were not recognized. These values have been added to list of options as acceptable. ~~Additionally, "REMANTS OF" should be cleaned and produce only "REMNANTS" as `Status` now in returned dataframe.~~ (#14)
   * If `Name` contained hyphen in product header then `Name` would be returned as NA. All east Pacific tropical depressions have a hyphen in the name. Pattern modified to accomodate this. Additionally, some `Status` may contain "SUB" text in `Status`. Pattern modified to accomodate this as well. (#15)
 
 # Hurricanes 0.0.0.9002

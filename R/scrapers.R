@@ -278,8 +278,6 @@ scrape_status <- function(header) {
   if(!any(stringr::str_count(header, paste(options, sep = "|"))))
     stop("Options not in header.")
   ptn <- paste(options, collapse = "|")
-  status <- stringr::str_extract(header, ptn)
-  stop_words <- c("OF")
-  status <- trimws(tm::removeWords(status, stop_words))
+  status <- trimws(stringr::str_extract(header, ptn))
   return(status)
 }

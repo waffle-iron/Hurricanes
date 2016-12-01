@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Changed
   - Fix bug in `scrape_status()` that was missing names and getting wrong status due to new values.
+    + Original fix took a value like "REMNANTS OF" and removed stop words. This led to `Name` not getting captured sometimes. There aren't many pleasant ways of adjusting so instead of chosen to leave "REMNANTS OF" as-is; no stop words or removal thereof. 
   - Added hyphen (-) to pattern in `scrape_name` to accomodate east Pacifc tropical depressions (e.g., "TROPICAL DEPRESSION ONE-E").
   - Allow for potential status such as "SUBTROPICAL DEPRESSION", "SUBTROPICAL STORM" such as in Hurricane Alex, Adv 1, 2016.
   - Allow for additional text between advisory number and newline character in some products.
