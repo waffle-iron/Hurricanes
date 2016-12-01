@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
   - Fix bug in `scrape_status()` that was missing names and getting wrong status due to new values.
   - Added hyphen (-) to pattern in `scrape_name` to accomodate east Pacifc tropical depressions (e.g., "TROPICAL DEPRESSION ONE-E").
   - Allow for potential status such as "SUBTROPICAL DEPRESSION", "SUBTROPICAL STORM" such as in Hurricane Alex, Adv 1, 2016.
+  - Allow for additional text between advisory number and newline character in some products.
 
 ### Removed
   - NA
