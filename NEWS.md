@@ -2,6 +2,10 @@
 
 Correct bugs and erroneous data.
 
+## Minor Changes
+
+  * Added `saffir()` to return dataframe of Saffir Simpson Hurricane Scale.
+
 ## Bug Fixes
 
   * `fstadv$Adv` would return NA if additional text after advisory number in header (for example, "...CORRECTED"). Pattern modified to allow optional alphanumeric and punctuation between advisory number and newline character(\n). (#13)
