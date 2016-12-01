@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
   - `saffir()` Return dataframe of Saffir Simpson Hurricane Scale.
+  - Base tests for `fstadv()`
 
 ### Changed
   - Fix bug in `scrape_status()` that was missing names and getting wrong status due to new values.
