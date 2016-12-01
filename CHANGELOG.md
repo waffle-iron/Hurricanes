@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [v0.0.0.9003] - yyyy-mm-dd
 
 ### Added
-  - NA
+  - `saffir()` Return dataframe of Saffir Simpson Hurricane Scale.
 
 ### Changed
   - Fix bug in `scrape_status()` that was missing names and getting wrong status due to new values.

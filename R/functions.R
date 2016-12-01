@@ -113,6 +113,39 @@ month_str_to_num <- function(m) {
   
 }
 
+#' @title saffir
+#' @description Returns dataframe of Saffir Simpson Hurricane Scale.
+#' @details Classification of storms are based on wind speed. The 
+#' \href{http://www.nhc.noaa.gov/aboutsshws.php}{Saffir-Simpson Hurricane Scale} 
+#' is technically defined for classifying hurricanes but this will classify 
+#' tropical storms and depressions as well.
+#' 
+#' Subtropical or Extratropical storms should not use this measure but rather 
+#' use the status contained in the header of the text product. This function 
+#' should be used for summaries only.
+#' @return Dataframe of Saffir Simpson Hurricane Scale.
+#' @export
+saffir <- function() {
+
+  df <- data.frame("Abbr" = c("TD", "TS", 1, 2, 3, 4, 5), 
+                   "Long" = c("Tropical Depression", 
+                              "Tropical Storm", 
+                              "Category 1", 
+                              "Category 2", 
+                              "Category 3", 
+                              "Category 4", 
+                              "Category 5"), 
+                   "MaxWind" = c(38, 64, 83, 95, 113, 134, NA), 
+                   "Damage" = c(NA, 
+                                NA, 
+                                "Minimal", 
+                                "Moderate", 
+                                "Extensive", 
+                                "Extreme", 
+                                "Catastrophic"))
+  return(df)
+}
+
 #' @title .status
 #' @description Test URL status. 
 #' @details Return URL if status is 'OK'. Otherwise, return NA and print 
