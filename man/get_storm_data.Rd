@@ -4,7 +4,7 @@
 \alias{get_storm_data}
 \title{get_storm_data}
 \usage{
-get_storm_data(..., names = list(), link)
+get_storm_data(..., names = list(), link, display_link = TRUE)
 }
 \arguments{
 \item{...}{Products to retrieve. c("discus", "fstadv", "posest", "public", 
@@ -16,6 +16,8 @@ the returned dataframes. Pass a named list where the name of each element
 is that of the product. See examples for more information.}
 
 \item{link}{to storm's archive page.}
+
+\item{display_link}{Show message of link currently being worked.}
 }
 \value{
 Dataframes for each of the products.

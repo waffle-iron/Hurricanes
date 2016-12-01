@@ -83,6 +83,7 @@ get_products <- function(link) {
 #' the returned dataframes. Pass a named list where the name of each element 
 #' is that of the product. See examples for more information.
 #' @param link to storm's archive page.
+#' @param display_link Show message of link currently being worked.
 #' @return Dataframes for each of the products.
 #' @examples
 #' ## Get public advisories for Tropical Storm Charley, 1998
@@ -99,7 +100,7 @@ get_products <- function(link) {
 #'                             "discus" = "al.1998.charley.discus"), 
 #'                link = "http://www.nhc.noaa.gov/archive/1998/1998CHARLEYadv.html")
 #' @export
-get_storm_data <- function(..., names = list(), link) {
+get_storm_data <- function(..., names = list(), link, display_link = TRUE) {
   
   x <- list(...)
   if(!(all(x %in% c("discus", "fstadv", "posest", "public", "prblty", "update", 
@@ -113,7 +114,7 @@ get_storm_data <- function(..., names = list(), link) {
   
   x <- unlist(x)
   
-  s <- sapply(x, function(z, n = names, l = link){
+  s <- sapply(x, function(z, n = names, l = link, display_link = display_link){
     f <- paste("get", z, sep = "_")
     res <- do.call(f, args = list("link" = l))
     if(!is.null(n[[z]])) {
