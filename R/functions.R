@@ -17,7 +17,54 @@
 #' }
 #' 
 #' @section Getting Storm Data:
-#' To be written...
+#' There are several products available for every storm. Some storms have 
+#' extra products depending on their conditions. And there are several ways of 
+#' getting this data.
+#' 
+#' With \code{\link{get_storms}} a dataframe is returned with a variable Link 
+#' to each storm's archive page. There are several products available but the 
+#' three minimum for each storm are:
+#' \describe{
+#'   \item{Forecast/Advisory (fstadv)}{Contains current storm information, 
+#'     forecast track, wind speed, forecast wind radius and other data. This 
+#'     product contains the bulk of detailed information on a storm.}
+#'   \item{Storm Discussion (discus)}{Contains discussion text on the current 
+#'     structure of the storm, forecast models and past trends.}
+#'   \item{Wind Probabilities (wndprb)}{Contains the probability of n-wind 
+#'     affecting a certain area within the forecast period.}
+#' }
+#' 
+#' Of the three above only the forecast/advisory (fstadv) products are scraped 
+#' in detail. Additional data will be incorporated soon. The other products 
+#' only returnthe content of the text product.
+#' 
+#' When you have a link to a storm's archive page you pass that value (or a 
+#' vector of storm links) to \code{\link{get_storm_data}} along with the 
+#' product you want to retrieve. There is no default and you must specify at 
+#' least one product.
+#' 
+#' Keep in mind the more products/storms you request the longer it can take to 
+#' return results. Given a good internet connection you can get all fstadv 
+#' products for one storm in under 1 second
+#' 
+#' See \code{\link{get_storm_data}} for information on the other products 
+#' available. 
+#' 
+#' Additionally, each product is its own function you can use to return data 
+#' for a specific advisory. In other words, if you have a link to a fstadv 
+#' product, say for Bonnie, 2016, Adv 6, you can pass that link directly to 
+#' \code{\link{fstadv}}
+#' 
+#' \code{
+#'   x <- "http://www.nhc.noaa.gov/archive/2016/al02/al022016.fstadv.006.shtml?"
+#'   fstadv(link = x)
+#' }
+#' 
+#' @section Helper functions
+#' There are a few helper functions available but one you will likely need most 
+#' is \code{\link{toproper}}. Most all storm data returned is either mixed-case
+#' (aBcDeFg) or all uppercase. \code{\link{toproper}} will turn something like 
+#' "TROPICAL DEPRESSION ONE" into "Tropical Depression One".
 #' 
 #' @docType package
 #' @name Hurricanes
