@@ -271,9 +271,9 @@ scrape_name <- function(header) {
 scrape_status <- function(header) {
   options <- c("POST-TROPICAL CYCLONE", 
                "REMNANTS OF", 
-               "(?:SUB)TROPICAL DISTURBANCE", 
-               "(?:SUB)TROPICAL DEPRESSION", 
-               "(?:SUB)TROPICAL STORM", 
+               "(?:SUB)?TROPICAL DISTURBANCE", 
+               "(?:SUB)?TROPICAL DEPRESSION", 
+               "(?:SUB)?TROPICAL STORM", 
                "HURRICANE")
   if(!any(stringr::str_count(header, paste(options, sep = "|"))))
     stop("Options not in header.")
