@@ -60,11 +60,15 @@
 #'   fstadv(link = x)
 #' }
 #' 
-#' @section Helper functions
-#' There are a few helper functions available but one you will likely need most 
-#' is \code{\link{toproper}}. Most all storm data returned is either mixed-case
+#' @section Helper Functions:
+#' There are a few helper functions available.
+#' 
+#' \code{\link{toproper}} Most all storm data returned is either mixed-case
 #' (aBcDeFg) or all uppercase. \code{\link{toproper}} will turn something like 
 #' "TROPICAL DEPRESSION ONE" into "Tropical Depression One".
+#' 
+#' \code{\link{saffir}} Returns a dataframe of values based on the Saffir 
+#' Simpson Hurricane Scale.
 #' 
 #' @docType package
 #' @name Hurricanes
