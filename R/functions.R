@@ -127,22 +127,21 @@ month_str_to_num <- function(m) {
 #' @export
 saffir <- function() {
 
-  df <- data.frame("Abbr" = c("TD", "TS", 1, 2, 3, 4, 5), 
-                   "Long" = c("Tropical Depression", 
-                              "Tropical Storm", 
-                              "Category 1", 
-                              "Category 2", 
-                              "Category 3", 
-                              "Category 4", 
-                              "Category 5"), 
-                   "MaxWind" = c(38, 64, 83, 95, 113, 134, NA), 
-                   "Damage" = c(NA, 
+  categories <- c("Tropical Depression", "Tropical Storm", "Category 1", 
+                  "Category 2", "Category 3", "Category 4", "Category 5")
+
+  df <- data.frame("Abbr" = factor(c("TD", "TS", 1, 2, 3, 4, 5), 
+                                   levels = c("TD", "TS", 1, 2, 3, 4, 5)), 
+                   "Long" = factor(categories, levels = categories), 
+                   "MinWind" = c(0, 34, 65, 84, 96, 114, 135), 
+                   "MaxWind" = c(33, 64, 83, 95, 113, 134, Inf), 
+                   "Damage" = as.character(c(NA, 
                                 NA, 
                                 "Minimal", 
                                 "Moderate", 
                                 "Extensive", 
                                 "Extreme", 
-                                "Catastrophic"))
+                                "Catastrophic")))
   return(df)
 }
 
